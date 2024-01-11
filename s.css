@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
+body {
+  background-color: #263238;
+  margin: 0px;
+  padding: 0px;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #80cbc4;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #80cbc4;
+  }
+}
+.typing_space {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 300px;
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+}
+.typing_space .title {
+  position: absolute;
+  top: -150px;
+  left: 0px;
+  font-size: 30px;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+}
+.typing_space .populated-overlay {
+  position: absolute;
+  width: 100%;
+  height: 230px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* Firefox */
+  /* Chrome, Edge and Safari */
+}
+.typing_space .populated-overlay * {
+  scrollbar-width: thin;
+  scrollbar-color: #323437 #323437;
+}
+.typing_space .populated-overlay::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.typing_space .populated-overlay::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #323437;
+}
+.typing_space .populated-overlay::-webkit-scrollbar-track:hover {
+  background-color: #323437;
+}
+.typing_space .populated-overlay::-webkit-scrollbar-track:active {
+  background-color: #323437;
+}
+.typing_space .populated-overlay::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #323437;
+}
+.typing_space .populated-overlay::-webkit-scrollbar-thumb:hover {
+  background-color: #323437;
+}
+.typing_space .populated-overlay::-webkit-scrollbar-thumb:active {
+  background-color: #323437;
+}
+.typing_space .populated-overlay div {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 7px;
+  margin-bottom: 15px;
+  height: 30px;
+}
+.typing_space .populated-overlay div p {
+  font-weight: 400;
+  margin: 0px;
+  height: 30px;
+  color: rgba(255, 255, 255, 0);
+  font-size: 28px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.typing_space .populated {
+  width: 100%;
+  height: 150px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  white-space: nowrap;
+  /* Firefox */
+  /* Chrome, Edge and Safari */
+}
+.typing_space .populated .word {
+  flex-wrap: nowrap;
+  margin-inline: 3px;
+}
+.typing_space .populated .pointer {
+  width: 3px;
+  margin: 0px;
+  height: 30px;
+  animation: blink 1s infinite;
+  background-color: #80cbc4;
+}
+.typing_space .populated .correct {
+  color: #80cbc4;
+}
+.typing_space .populated .wrong {
+  color: rgb(248, 63, 63);
+}
+.typing_space .populated * {
+  scrollbar-width: thin;
+  scrollbar-color: #323437 #323437;
+}
+.typing_space .populated::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.typing_space .populated::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #263238;
+}
+.typing_space .populated::-webkit-scrollbar-track:hover {
+  background-color: #263238;
+}
+.typing_space .populated::-webkit-scrollbar-track:active {
+  background-color: #263238;
+}
+.typing_space .populated::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #263238;
+}
+.typing_space .populated::-webkit-scrollbar-thumb:hover {
+  background-color: #263238;
+}
+.typing_space .populated::-webkit-scrollbar-thumb:active {
+  background-color: #263238;
+}
+.typing_space .populated span {
+  font-weight: 400;
+  margin: 0px;
+  height: 48px;
+  color: #40525c;
+  font-size: 25px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+}
+.typing_space .populated .starter::before {
+  content: " ";
+}
+.typing_space .populated .space {
+  width: 12px;
+}
+.typing_space .populated div {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 7px;
+  margin-bottom: 15px;
+  height: 30px;
+}
+.typing_space #wpm {
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 24px;
+  color: #80cbc4;
+}
+.typing_space .refresh {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  padding-top: 15px;
+  align-self: center;
+  font-size: 25px;
+  color: rgba(170, 169, 169, 0.486);
+  cursor: pointer;
+}
+.typing_space .refresh:hover {
+  color: rgba(231, 231, 231, 0.842);
+}
+
+.property_bar {
+  width: 700px;
+  height: 40px;
+  background-color: #2e3c43;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  border-radius: 8px;
+  align-items: center;
+  transform: translate(-50%);
+}
+.property_bar div {
+  height: 80%;
+  margin-inline: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.property_bar div h1 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  color: #4C6772;
+  text-align: center;
+  align-self: center;
+}
+.property_bar .separator {
+  width: 3px;
+  height: 19px;
+  background-color: #263238;
+}
+
+.englishtype {
+  position: absolute;
+  left: 50%;
+  top: 180px;
+  color: #40525c;
+  transform: translate(-50%);
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.3s ease-in-out;
+}
+.englishtype span:hover {
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.typeselectarea {
+  width: 400px;
+  z-index: 10;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2e3f47;
+  display: none;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding-bottom: 25px;
+}
+.typeselectarea div {
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease-out;
+  cursor: pointer;
+}
+.typeselectarea div:hover {
+  background-color: #203138;
+  transition: 0.1s ease-out;
+}
+.typeselectarea div span {
+  color: white;
+  font-family: "Roboto Mono", monospace;
+}
+.typeselectarea .close {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #203138;
+  margin-bottom: 80px;
+  margin-right: 20px;
+  transition: 0.1s ease-in-out;
+}
+.typeselectarea .close i {
+  color: white;
+}
+.typeselectarea .close:hover {
+  transform: scale(1.1);
+  transition: 0.1s ease-in-out;
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.384);
+  z-index: 7;
+  position: absolute;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: none;
+}/*# sourceMappingURL=s.css.map */
